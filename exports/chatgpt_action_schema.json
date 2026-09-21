@@ -1,0 +1,125 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "CRYSTAL-X Material Discovery API",
+    "description": "API for generative crystal discovery, hybrid NLP material requirement extraction, crystallographic validation with pymatgen, property screening, and multi-criteria ranking for advanced energy applications.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://yellow-clubs-burn.loca.lt",
+      "description": "Live Public Tunnel Server"
+    }
+  ],
+  "paths": {
+    "/api/requirements/parse": {
+      "post": {
+        "summary": "Parse Natural Language Requirements",
+        "description": "Extracts chemical elements, excluded toxic elements, target band gaps, stability preferences, and applications from natural language.",
+        "operationId": "parseRequirements",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Natural language description of desired material",
+                    "example": "I need a stable silicon-based material for energy storage with a band gap around 2.3 eV and no lead, cadmium or mercury."
+                  }
+                },
+                "required": ["text"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted structured material requirements with confidence ratings"
+          }
+        }
+      }
+    },
+    "/api/discover": {
+      "post": {
+        "summary": "Run Discovery Pipeline",
+        "description": "Executes full crystal generation, deterministic structural validation (pymatgen), property screening, and multi-criteria ranking.",
+        "operationId": "runDiscovery",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "requirements": {
+                    "type": "object",
+                    "properties": {
+                      "application": { "type": "string", "example": "Energy storage" },
+                      "required_elements": { "type": "array", "items": { "type": "string" }, "example": ["Si"] },
+                      "excluded_elements": { "type": "array", "items": { "type": "string" }, "example": ["Pb", "Cd", "Hg"] },
+                      "num_candidates": { "type": "integer", "example": 10 }
+                    }
+                  }
+                },
+                "required": ["requirements"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Generated candidates with structural validation and ranking scores"
+          }
+        }
+      }
+    },
+    "/api/candidates": {
+      "get": {
+        "summary": "List Candidates",
+        "description": "Retrieves discovered crystal candidates with validation status, screening results, and ranking scores.",
+        "operationId": "listCandidates",
+        "responses": {
+          "200": {
+            "description": "List of active candidates"
+          }
+        }
+      }
+    },
+    "/api/candidates/{candidate_id}": {
+      "get": {
+        "summary": "Get Candidate Details",
+        "description": "Retrieves comprehensive details for a candidate including CIF string, lattice parameters, fractional coordinates, and validation checklist.",
+        "operationId": "getCandidateById",
+        "parameters": [
+          {
+            "name": "candidate_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Unique candidate ID, e.g. C-001"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Candidate detailed crystallographic specification"
+          }
+        }
+      }
+    },
+    "/api/stats": {
+      "get": {
+        "summary": "Get Discovery Statistics",
+        "description": "Returns counts of generated, valid, invalid, passed screening, potentially novel, and queued DFT candidates.",
+        "operationId": "getStats",
+        "responses": {
+          "200": {
+            "description": "Live platform metrics"
+          }
+        }
+      }
+    }
+  }
+}

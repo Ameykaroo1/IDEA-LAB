@@ -1,0 +1,170 @@
+import {
+  MaterialRequirements,
+  ParseResponse,
+  Candidate,
+  RankingWeights,
+  DFTQueueItem,
+  DashboardStats,
+  DiscoverResponse,
+  ModelStatusResponse,
+  DatasetStatusResponse
+} from "@/types";
+
+function getApiBase(): string {
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+  if (typeof window !== "undefined") {
+    return "/api";
+  }
+  return "http://127.0.0.1:8000/api";
+}
+
+const API_BASE = getApiBase();
+
+export async function getHealth(): Promise<{ status: string; mattergen_available: boolean }> {
+  const res = await fetch(`${API_BASE}/health`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Backend offline");
+  return res.json();
+}
+
+export async function getModelStatus(): Promise<ModelStatusResponse> {
+  const res = await fetch(`${API_BASE}/model/status`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch model status");
+  return res.json();
+}
+
+export async function getDatasetsStatus(): Promise<DatasetStatusResponse> {
+  const res = await fetch(`${API_BASE}/datasets/status`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch datasets status");
+  return res.json();
+}
+
+export async function getStats(): Promise<DashboardStats> {
+  const res = await fetch(`${API_BASE}/stats`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch dashboard statistics");
+  return res.json();
+}
+
+export async function parseRequirements(text: string): Promise<ParseResponse> {
+  const res = await fetch(`${API_BASE}/requirements/parse`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Parse error" }));
+    throw new Error(err.detail || "Failed to parse natural language requirement");
+  }
+  return res.json();
+}
+
+export async function validateRequirements(requirements: MaterialRequirements): Promise<{ is_valid: boolean; errors: string[]; warnings: string[] }> {
+  const res = await fetch(`${API_BASE}/requirements/validate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ requirements }),
+  });
+  if (!res.ok) throw new Error("Validation check failed");
+  return res.json();
+}
+
+export async function runDiscovery(
+  requirements: MaterialRequirements,
+  generator_mode?: string,
+  configured_model?: string
+): Promise<DiscoverResponse> {
+  const res = await fetch(`${API_BASE}/discover`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ requirements, generator_mode, configured_model }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Discovery failed" }));
+    throw new Error(err.detail || "Discovery execution failed");
+  }
+  return res.json();
+}
+
+export async function getCandidates(): Promise<Candidate[]> {
+  const res = await fetch(`${API_BASE}/candidates`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch candidates");
+  return res.json();
+}
+
+export async function getCandidate(id: string): Promise<Candidate> {
+  const res = await fetch(`${API_BASE}/candidates/${id}`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to fetch candidate ${id}`);
+  return res.json();
+}
+
+export async function reRankCandidates(weights: RankingWeights): Promise<Candidate[]> {
+  const res = await fetch(`${API_BASE}/rank`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ weights }),
+  });
+  if (!res.ok) throw new Error("Failed to re-rank candidates");
+  return res.json();
+}
+
+export async function uploadCIF(file: File): Promise<{ candidate: Candidate; message: string }> {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res = await fetch(`${API_BASE}/upload-cif`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Upload failed" }));
+    throw new Error(err.detail || "Failed to upload and validate CIF");
+  }
+  return res.json();
+}
+
+export async function getDftQueue(): Promise<DFTQueueItem[]> {
+  const res = await fetch(`${API_BASE}/dft-queue`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch DFT queue");
+  return res.json();
+}
+
+export async function addToDftQueue(candidateId: string, reason: string = "High-priority candidate for energy application"): Promise<void> {
+  const formData = new FormData();
+  formData.append("candidate_id", candidateId);
+  formData.append("reason", reason);
+
+  const res = await fetch(`${API_BASE}/dft-queue`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!res.ok) throw new Error("Failed to add candidate to DFT queue");
+}
+
+export async function removeFromDftQueue(candidateId: string): Promise<void> {
+  const res = await fetch(`${API_BASE}/dft-queue/${candidateId}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) throw new Error("Failed to remove from DFT queue");
+}
+
+export async function exportDftPackage(): Promise<{ export_dir: string; exported_candidates: string[]; disclaimer: string }> {
+  const res = await fetch(`${API_BASE}/dft-queue/export`, {
+    method: "POST",
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Export failed" }));
+    throw new Error(err.detail || "Failed to export DFT package");
+  }
+  return res.json();
+}
+
+export async function getDatasets(): Promise<any> {
+  const res = await fetch(`${API_BASE}/datasets`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to load reference datasets");
+  return res.json();
+}
+
+export async function resetSystem(): Promise<void> {
+  await fetch(`${API_BASE}/reset`, { method: "POST" });
+}

@@ -1,0 +1,14 @@
+{
+  "candidate_id": "C-002",
+  "formula": "Li4SiO4",
+  "predicted_properties": {
+    "energy_above_hull": 0.011,
+    "band_gap": 1.86,
+    "ionic_conductivity": null
+  },
+  "ranking_score": 90.6,
+  "reason_selected": "High ranking",
+  "queued_at": "2026-09-20T22:07:59.836750",
+  "status": "QUEUED",
+  "disclaimer": "DFT validation is downstream and is not performed by this prototype."
+}

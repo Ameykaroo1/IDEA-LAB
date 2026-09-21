@@ -1,0 +1,13 @@
+{
+  "candidate_id": "C-006",
+  "formula": "LiSi2PS2",
+  "predicted_properties": {
+    "energy_above_hull": 0.049,
+    "band_gap": 2.55
+  },
+  "ranking_score": 68.8,
+  "reason_selected": "Top ranked candidate in NLP discovery run",
+  "queued_at": "2026-09-20T12:00:00",
+  "status": "Ready for DFT",
+  "disclaimer": "DFT validation is downstream and is not performed by this prototype."
+}

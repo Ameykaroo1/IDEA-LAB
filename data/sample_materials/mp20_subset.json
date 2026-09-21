@@ -1,0 +1,47 @@
+[
+  {
+    "material_id": "mp-149",
+    "dataset_provenance": "MP-20",
+    "formula": "Si",
+    "pretty_formula": "Si",
+    "elements": ["Si"],
+    "crystal_system": "Cubic",
+    "space_group": "Fd-3m (227)",
+    "formation_energy_per_atom": 0.0,
+    "energy_above_hull": 0.0,
+    "band_gap": 1.14,
+    "density": 2.33,
+    "cif_filename": "Si_diamond.cif",
+    "energy_application": "Battery Anode / Semiconductor"
+  },
+  {
+    "material_id": "mp-19017",
+    "dataset_provenance": "MP-20",
+    "formula": "LiFePO4",
+    "pretty_formula": "LiFePO4",
+    "elements": ["Li", "Fe", "P", "O"],
+    "crystal_system": "Orthorhombic",
+    "space_group": "Pnma (62)",
+    "formation_energy_per_atom": -2.14,
+    "energy_above_hull": 0.0,
+    "band_gap": 3.71,
+    "density": 3.60,
+    "cif_filename": "LiFePO4.cif",
+    "energy_application": "Lithium-ion Battery Cathode"
+  },
+  {
+    "material_id": "mp-22526",
+    "dataset_provenance": "MP-20",
+    "formula": "LiCoO2",
+    "pretty_formula": "LiCoO2",
+    "elements": ["Li", "Co", "O"],
+    "crystal_system": "Trigonal",
+    "space_group": "R-3m (166)",
+    "formation_energy_per_atom": -2.35,
+    "energy_above_hull": 0.0,
+    "band_gap": 2.15,
+    "density": 5.06,
+    "cif_filename": "LiCoO2.cif",
+    "energy_application": "Lithium-ion Battery Cathode"
+  }
+]

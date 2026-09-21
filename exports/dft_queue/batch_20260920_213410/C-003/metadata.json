@@ -1,0 +1,14 @@
+{
+  "candidate_id": "C-003",
+  "formula": "LiSi",
+  "predicted_properties": {
+    "energy_above_hull": 0.007,
+    "band_gap": 1.84,
+    "ionic_conductivity": null
+  },
+  "ranking_score": 90.2,
+  "reason_selected": "High ranking",
+  "queued_at": "2026-09-20T21:34:10.262286",
+  "status": "Ready for DFT",
+  "disclaimer": "DFT validation is downstream and is not performed by this prototype."
+}

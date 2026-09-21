@@ -1,0 +1,14 @@
+{
+  "candidate_id": "C-001",
+  "formula": "Si",
+  "predicted_properties": {
+    "energy_above_hull": 0.0,
+    "band_gap": 1.09,
+    "ionic_conductivity": null
+  },
+  "ranking_score": 92.5,
+  "reason_selected": "High ranking",
+  "queued_at": "2026-09-20T19:34:05.113880",
+  "status": "Ready for DFT",
+  "disclaimer": "DFT validation is downstream and is not performed by this prototype."
+}

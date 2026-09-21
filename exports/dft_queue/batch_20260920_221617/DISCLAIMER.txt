@@ -1,0 +1,10 @@
+========================================================================
+CRYSTAL-X DOWNSTREAM DFT VALIDATION PACKAGE
+========================================================================
+DISCLAIMER:
+DFT validation is downstream and is not performed by this prototype.
+AI-generated candidates are computational proposals. Structural validity
+and ML predictions do not constitute proof of thermodynamic stability,
+synthesizability, or experimental performance. High-priority candidates
+require higher-fidelity computational and experimental validation.
+========================================================================
