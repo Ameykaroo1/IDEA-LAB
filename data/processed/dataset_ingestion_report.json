@@ -1,0 +1,44 @@
+{
+  "title": "CRYSTAL-X Full Reference Dataset Ingestion & Validation Report",
+  "ingested_at": "2026-09-24T18:09:43.549126+00:00",
+  "duration_seconds": 56.88,
+  "database_file": "data\\reference_catalog.db",
+  "database_size_bytes": 227377152,
+  "total_records_indexed": 139131,
+  "total_valid_structures": 139131,
+  "unique_chemical_systems": 37057,
+  "unique_formulas": 76981,
+  "counts_by_source": {
+    "JARVIS-DFT": 93902,
+    "MP-20": 45229
+  },
+  "mp20": {
+    "source": "https://media.githubusercontent.com/media/microsoft/mattergen/main/data-release/mp-20/mp_20.zip",
+    "status": "FULL",
+    "expected_records": 45229,
+    "total_loaded": 45229,
+    "train_records": 27136,
+    "val_records": 9047,
+    "test_records": 9046,
+    "valid_structures": 45229,
+    "valid_lattice": 45229,
+    "valid_coordinates": 45229,
+    "duplicate_ids": 0,
+    "invalid_records": 0,
+    "unique_formulas": 37217,
+    "unique_elements_count": 89
+  },
+  "jarvis_dft": {
+    "source": "https://ndownloader.figshare.com/files/64391379",
+    "status": "FULL",
+    "expected_records": 93902,
+    "total_loaded": 93902,
+    "valid_structures": 93902,
+    "valid_lattice": 93902,
+    "valid_coordinates": 93902,
+    "duplicate_ids": 0,
+    "invalid_records": 0,
+    "unique_formulas": 65395,
+    "unique_elements_count": 89
+  }
+}

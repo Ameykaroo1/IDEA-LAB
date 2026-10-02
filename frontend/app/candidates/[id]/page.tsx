@@ -306,13 +306,34 @@ export default function CandidateDetailPage() {
               )}
 
               {/* Reference Dataset Novelty Check */}
-              <div className="p-2.5 rounded-lg bg-emerald-50/50 border border-accentBorder text-xs text-accentDark flex items-start gap-2">
+              <div className="p-2.5 rounded-lg bg-slate-50 border border-borderColor text-xs flex items-start gap-2">
                 <Compass className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold block">Reference Baseline (MP-20 / JARVIS):</span>
-                  <span className="text-[11px] text-secondaryText">
-                    {candidate.novelty?.result || "No identical match found in reference databases. Genuinely new candidate structure."}
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <span className="font-semibold text-primaryText">Reference Comparison:</span>
+                    <span className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-bold ${
+                      candidate.novelty?.result?.startsWith("DUPLICATE")
+                        ? "bg-amber-50 text-amber-800 border border-amber-200"
+                        : candidate.novelty?.result?.startsWith("SIMILAR")
+                        ? "bg-blue-50 text-blue-700 border border-blue-200"
+                        : "bg-emerald-50 text-accentDark border border-accentBorder"
+                    }`}>
+                      {candidate.novelty?.result || "NO CLOSE MATCH IN MP-20/JARVIS REFERENCE DATASET"}
+                    </span>
+                  </div>
+                  <span className="text-[11px] text-secondaryText block">
+                    {candidate.novelty?.verdict_label || "No close match found in MP-20 or JARVIS-DFT reference databases."}
                   </span>
+                  {candidate.novelty?.matched_reference_id && (
+                    <span className="text-[10px] font-mono text-accentDark block mt-0.5">
+                      Matched ID: {candidate.novelty.matched_reference_id} ({candidate.novelty.matched_dataset})
+                    </span>
+                  )}
+                  {candidate.novelty?.scientific_disclaimer && (
+                    <span className="text-[10px] text-slate-500 block mt-1 leading-normal italic">
+                      {candidate.novelty.scientific_disclaimer}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

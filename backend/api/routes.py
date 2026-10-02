@@ -78,7 +78,7 @@ phenomena_router = PhenomenaRouter(
 )
 screening_service = PropertyScreeningService()
 data_service = DataService()
-novelty_service = NoveltyService(reference_materials=data_service.get_reference_materials())
+novelty_service = NoveltyService()
 dft_service = DFTQueueService()
 
 
@@ -688,11 +688,38 @@ def export_dft_package():
 # ==========================================
 
 @router.get("/datasets")
-def get_reference_datasets():
+def get_reference_datasets(
+    query: Optional[str] = None,
+    dataset_source: Optional[str] = None,
+    element: Optional[str] = None,
+    max_ehull: Optional[float] = None,
+    min_band_gap: Optional[float] = None,
+    stable_only: bool = False,
+    limit: int = 24,
+    page: int = 1
+):
+    search_res = data_service.search_reference_materials(
+        query=query,
+        dataset_source=dataset_source,
+        element=element,
+        max_ehull=max_ehull,
+        min_band_gap=min_band_gap,
+        stable_only=stable_only,
+        limit=min(limit, 100),
+        page=max(1, page)
+    )
+    status = novelty_service.get_dataset_status()
     return {
         "dataset_name": "Unified MP-20 & JARVIS-DFT Reference Catalog",
-        "description": "Authentic reference inorganic crystal materials from MP-20 (Materials Project) and JARVIS-DFT used for structure matching, novelty checks, and stability benchmarking.",
-        "materials": data_service.get_reference_materials()
+        "description": "Authentic reference inorganic crystal materials from MP-20 (Materials Project, 45,229) and JARVIS-DFT (NIST, 93,902) used for structure matching, novelty checks, and stability benchmarking.",
+        "total_reference_structures": status.get("total_reference_structures", 139131),
+        "mp20_count": status.get("mp20", {}).get("count", 45229),
+        "jarvis_count": status.get("jarvis", {}).get("count", 93902),
+        "total_records": search_res["total_records"],
+        "page": search_res["page"],
+        "limit": search_res["limit"],
+        "total_pages": search_res["total_pages"],
+        "materials": search_res["materials"]
     }
 
 

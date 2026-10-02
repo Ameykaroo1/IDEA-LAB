@@ -407,10 +407,11 @@ def test_28_mp20_comparison(silicon_crystal):
     )
     assert res.result == "DUPLICATE OF MP-20"
     
-    # Test novel/unmatched crystal
+    # Test novel/unmatched crystal (Fr-At has zero matches in MP-20 and JARVIS-DFT)
     novel_lat = Lattice.cubic(6.5)
-    novel_struct = Structure(novel_lat, ["Na", "Cl"], [[0.0, 0.0, 0.0], [0.5, 0.5, 0.5]])
+    novel_struct = Structure(novel_lat, ["Fr", "At"], [[0.0, 0.0, 0.0], [0.5, 0.5, 0.5]])
     novel_res = novelty.evaluate_novelty(novel_struct)
+    assert novel_res.result == "NO CLOSE MATCH IN MP-20/JARVIS REFERENCE DATASET"
     assert "absolute scientific novelty" in novel_res.scientific_disclaimer.lower()
 
 

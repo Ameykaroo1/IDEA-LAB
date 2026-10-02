@@ -26,7 +26,8 @@ import {
   Filter,
   Download,
   Info,
-  ChevronRight
+  ChevronRight,
+  Database
 } from "lucide-react";
 import { parseRequirements, runDiscovery, validateRequirements, getModelStatus } from "@/lib/api";
 import { MaterialRequirements, ParseResponse, Candidate, ModelStatusResponse } from "@/types";
@@ -316,9 +317,13 @@ export default function DiscoverPage() {
         </div>
 
         <div className="flex items-center gap-2 shrink-0 text-[11px] text-secondaryText font-mono">
-          <span className="px-2 py-1 rounded bg-slate-50 border border-borderColor">
-            Datasets: MP-20 + JARVIS
-          </span>
+          <Link
+            href="/datasets"
+            className="px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 transition border border-borderColor flex items-center gap-1.5 text-primaryText"
+          >
+            <Database className="w-3.5 h-3.5 text-accent" />
+            <span className="font-semibold">139,131 Ref Structures</span>
+          </Link>
         </div>
       </div>
 

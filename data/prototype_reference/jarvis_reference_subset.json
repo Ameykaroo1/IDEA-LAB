@@ -1,0 +1,64 @@
+[
+  {
+    "material_id": "JVASP-1002",
+    "dataset_provenance": "JARVIS-DFT",
+    "formula": "Na3V2(PO4)3",
+    "reduced_formula": "Na3V2(PO4)3",
+    "elements": [
+      "Na",
+      "V",
+      "P",
+      "O"
+    ],
+    "crystal_system": "Trigonal",
+    "space_group": "R-3c (167)",
+    "formation_energy_per_atom": -2.48,
+    "energy_above_hull": 0.005,
+    "band_gap": 2.45,
+    "bulk_modulus_gpa": 76.4,
+    "cif_filename": "Na3V2PO43.cif",
+    "energy_application": "Sodium-ion Cathode (NASICON)",
+    "is_reference_only": true
+  },
+  {
+    "material_id": "JVASP-82341",
+    "dataset_provenance": "JARVIS-DFT",
+    "formula": "Li10GeP2S12",
+    "reduced_formula": "Li10GeP2S12",
+    "elements": [
+      "Li",
+      "Ge",
+      "P",
+      "S"
+    ],
+    "crystal_system": "Tetragonal",
+    "space_group": "P4_2/nmc (137)",
+    "formation_energy_per_atom": -0.82,
+    "energy_above_hull": 0.024,
+    "band_gap": 2.65,
+    "bulk_modulus_gpa": 42.1,
+    "cif_filename": "Li10GeP2S12.cif",
+    "energy_application": "Solid-state Superionic Electrolyte",
+    "is_reference_only": true
+  },
+  {
+    "material_id": "JVASP-6120",
+    "dataset_provenance": "JARVIS-DFT",
+    "formula": "Li2SiS3",
+    "reduced_formula": "Li2SiS3",
+    "elements": [
+      "Li",
+      "Si",
+      "S"
+    ],
+    "crystal_system": "Monoclinic",
+    "space_group": "P2_1/c (14)",
+    "formation_energy_per_atom": -1.15,
+    "energy_above_hull": 0.012,
+    "band_gap": 2.1,
+    "bulk_modulus_gpa": 38.2,
+    "cif_filename": "Li2SiS3.cif",
+    "energy_application": "Lithium Thiosilicate Solid Electrolyte",
+    "is_reference_only": true
+  }
+]

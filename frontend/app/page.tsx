@@ -154,10 +154,10 @@ export default function LandingPage() {
 
         <div className="px-4 py-2 border-l-2 border-slate-300">
           <div className="text-2xl font-bold tracking-tight text-slate-900 font-mono">
-            20,000+
+            139,131
           </div>
           <div className="text-xs font-semibold text-slate-700 mt-0.5">Reference Structures</div>
-          <p className="text-[11px] text-slate-500 mt-1">Cross-referenced against MP-20 & JARVIS</p>
+          <p className="text-[11px] text-slate-500 mt-1">45,229 MP-20 + 93,902 JARVIS-DFT</p>
         </div>
       </section>
 

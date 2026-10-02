@@ -159,8 +159,27 @@ export async function exportDftPackage(): Promise<{ export_dir: string; exported
   return res.json();
 }
 
-export async function getDatasets(): Promise<any> {
-  const res = await fetch(`${API_BASE}/datasets`, { cache: "no-store" });
+export async function getDatasets(params?: {
+  query?: string;
+  dataset_source?: string;
+  element?: string;
+  max_ehull?: number;
+  stable_only?: boolean;
+  page?: number;
+  limit?: number;
+}): Promise<any> {
+  const queryParams = new URLSearchParams();
+  if (params?.query) queryParams.append("query", params.query);
+  if (params?.dataset_source && params.dataset_source !== "ALL") queryParams.append("dataset_source", params.dataset_source);
+  if (params?.element) queryParams.append("element", params.element);
+  if (params?.max_ehull !== undefined) queryParams.append("max_ehull", params.max_ehull.toString());
+  if (params?.stable_only) queryParams.append("stable_only", "true");
+  if (params?.page) queryParams.append("page", params.page.toString());
+  if (params?.limit) queryParams.append("limit", params.limit.toString());
+
+  const qs = queryParams.toString();
+  const url = qs ? `${API_BASE}/datasets?${qs}` : `${API_BASE}/datasets`;
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load reference datasets");
   return res.json();
 }

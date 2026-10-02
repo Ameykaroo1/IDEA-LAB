@@ -36,4 +36,9 @@ dist/
 # Project archives & temp data
 crystal_x_project.zip
 exports/*.zip
+exports/dft_queue/
 data/cache/
+data/reference_catalog.db
+data/jarvis_dft/*.zip
+data/mp20/*.zip
+data/raw/
