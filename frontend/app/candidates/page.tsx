@@ -15,7 +15,8 @@ import {
   Check,
   Search,
   FileSpreadsheet,
-  ArrowUpDown
+  ArrowUpDown,
+  ShieldCheck
 } from "lucide-react";
 import { getCandidates, reRankCandidates, addToDftQueue, removeFromDftQueue } from "@/lib/api";
 import { Candidate, RankingWeights } from "@/types";
@@ -333,6 +334,13 @@ export default function CandidatesPage() {
                       </td>
                       <td className="py-3 px-3 text-right">
                         <div className="flex items-center justify-end gap-1.5">
+                          <Link
+                            href="/scientific-validation"
+                            className="p-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 transition"
+                            title="Run RAG Scientific Validation"
+                          >
+                            <ShieldCheck className="w-3.5 h-3.5" />
+                          </Link>
                           <Link
                             href={`/candidates/${c.candidate_id}`}
                             className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-secondaryText hover:text-primaryText transition"

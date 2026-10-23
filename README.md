@@ -123,44 +123,106 @@ Downstream DFT relaxation is not performed within the prototype due to compute e
 
 ---
 
-## 6. Installation & Execution
+---
+
+## 6. RAG-Based Scientific Validation & Literature Grounding
+
+CRYSTAL-X features an integrated **RAG-Based Scientific Validation and Explainability Module** designed to cross-validate AI-generated crystals against peer-reviewed materials science literature, Materials Project computed DFT data, Crystallography Open Database (COD) experimental structures, and local reference databases.
+
+`
+Candidate Crystal (Formula, CIF, Space Group, Application)
+                        ↓
+    ┌───────────────────┴───────────────────┐
+    ↓                                       ↓
+1. DETERMINISTIC SCIENTIFIC CHECKS      2. HYBRID SCIENTIFIC RETRIEVAL
+   • Geometry: CIF parser, lattice         • Exact Formula Matching (top boost)
+     volume, coordinate wrapping,          • Chemical Subsystem Analogs (e.g. Li-Ge-P-S)
+     overlap distance (< 0.70 Å FAIL,      • Semantic Vector Cosine Search (ChromaDB)
+     0.70-1.20 Å WARNING, ≥ 1.20 Å PASS)   • Materials Project API (MP-20 v2)
+   • Chemistry: pymatgen composition,      • Crystallography Open Database (COD)
+     element restrictions, charge balance  • 139,131-Structure Local Catalog
+     & oxidation-state plausibility
+   • Stability: Convex hull distance
+     (Ehull ≤ 0.05 eV/atom threshold)
+   • Properties: Band gap insulation,
+     Faraday theoretical capacity, ionic
+     conductivity status
+    └───────────────────┬───────────────────┘
+                        ↓
+3. LLM EVIDENCE-GROUNDED SCIENTIFIC REASONING
+   • Synthesizes tool check results with literature passages
+   • Highlights verified experimental facts vs computational estimates vs unknowns
+   • Flags physical/chemical risks (e.g. thiophosphate air hydrolysis to H2S, garnet passivation)
+   • Proposes concrete next tests (DFT NEB migration barriers, AIMD at 600-1000K, PXRD, EIS)
+   • Built-in Offline Scientific Engine provides zero-network, zero-hallucination execution
+                        ↓
+4. STRUCTURED VALIDATION REPORT & FRONTEND STUDIO
+   • Color-coded check status badges (PASS, FAIL, WARNING, UNKNOWN, NOT_RUN)
+   • Peer-reviewed citations with DOIs, page excerpts, and relevance percentages
+   • Comparable materials benchmark table
+`
+
+### Key Capabilities
+
+1. **Document Ingestion Engine** (ackend/services/rag/ingestion.py):
+   - Ingests research papers in **PDF**, plain text (.txt), and Markdown (.md).
+   - Context-preserving scientific chunking with automatic chemical formula extraction.
+   - Robust error handling for corrupt files, scanned PDFs without OCR, and missing metadata.
+
+2. **ChromaDB & Scientific Dense Embedder** (ackend/services/rag/vector_store.py):
+   - Unit-normalized 128-dimensional dense semantic embedding function tailored for energy storage and crystallography terms.
+   - 100% offline-safe with zero external network downloads or API timeouts.
+
+3. **Multi-Source Scientific Connectors** (ackend/services/rag/connectors.py):
+   - **Materials Project API**: Queries live MP database when MP_API_KEY is provided.
+   - **Crystallography Open Database (COD)**: Queries open-access experimental structures via ENABLE_COD_API=1.
+   - **Local Reference Database**: Instant offline search across 139,131 structures in data/reference_catalog.db.
+
+4. **Transparent Scientific Integrity Standard**:
+   - Literature existence of a related material **never implies that a new polymorph is stable**.
+   - Missing calculations (e.g. unmeasured conductivity or unrelaxed Ehull) are marked **UNKNOWN**, never counted as failures or assigned fabricated values.
+
+---
+
+## 7. Installation & Execution
 
 ### Prerequisites
 - Python 3.10+ (Python 3.12 recommended)
 - Node.js 18+ & npm
 
 ### Backend Setup (FastAPI)
-```powershell
-# 1. Install dependencies (if not already installed)
-pip install fastapi uvicorn pymatgen ase scipy numpy pydantic pytest
+`powershell
+# 1. Install dependencies
+pip install fastapi uvicorn pymatgen ase scipy numpy pydantic pytest pypdf chromadb
 
 # 2. Run backend server
 python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
-```
-API Documentation will be accessible at: `http://localhost:8000/docs`
+`
+API Documentation will be accessible at: http://localhost:8000/docs
 
 ### Frontend Setup (Next.js)
-```powershell
+`powershell
 # 1. Navigate to frontend directory
 cd frontend
 
 # 2. Start development server
 npm run dev
-```
-Web application will be accessible at: `http://localhost:3000`
+`
+Web application will be accessible at: http://localhost:3000
 
 ---
 
-## 7. Automated Testing Suite
+## 8. Automated Testing Suite
 
-CRYSTAL-X includes a 38-test automated test suite covering all critical workflows:
+CRYSTAL-X includes an extensive automated test suite covering all scientific, crystallographic, generative, and RAG pipelines:
 
-```powershell
-python -m pytest tests/ -v
-```
+`powershell
+# Run the complete test suite
+python -m pytest tests/test_rag_pipeline.py tests/test_validation.py tests/test_ranking.py tests/test_nlp_requirements.py -v
+`
 
-- `tests/test_nlp_requirements.py`: 10+ NLP extraction scenarios (elements, exclusions, band gap target/range, hull energy, qualitative preferences, toxic shorthand).
-- `tests/test_validation.py`: 5 valid structures, 5 invalid structures, fractional coordinate wrapping, atom-overlap heuristic, and duplicate detection.
-- `tests/test_ranking.py`: 5 ranking tests including dynamic weight renormalization.
-- `tests/test_api.py`: REST API integration tests.
-- `tests/test_end_to_end.py`: Full demonstration scenario test.
+- 	ests/test_rag_pipeline.py (16 tests): PDF & text ingestion, metadata preservation, exact chemical formula retrieval, no-evidence-found behavior, distance matrix heuristics, oxidation-state plausibility, status handling (PASS, FAIL, WARNING, UNKNOWN, NOT_RUN), LLM prompt synthesis, and API routes.
+- 	ests/test_validation.py (12 tests): Crystallographic syntax, lattice determinant, unit cell volume, fractional coordinate wrapping, atom-overlap heuristic, and duplicate detection.
+- 	ests/test_ranking.py (5 tests): Multi-criteria ranking and dynamic weight renormalization.
+- 	ests/test_nlp_requirements.py (12 tests): Hybrid NLP requirement parsing, element normalization, and constraint extraction.
+- 	ests/test_battery_mattergen.py & 	ests/test_scientific_pipeline.py: Full discovery and property evaluation pipelines.

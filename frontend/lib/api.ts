@@ -187,3 +187,76 @@ export async function getDatasets(params?: {
 export async function resetSystem(): Promise<void> {
   await fetch(`${API_BASE}/reset`, { method: "POST" });
 }
+
+// ==========================================
+// RAG Scientific Validation API Calls
+// ==========================================
+
+export async function getConnectorsStatus(): Promise<any> {
+  const res = await fetch(`${API_BASE}/rag/connectors/status`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch scientific connectors status");
+  return res.json();
+}
+
+export async function getRAGDocuments(): Promise<{ count: number; documents: any[] }> {
+  const res = await fetch(`${API_BASE}/rag/documents`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to load RAG knowledge base documents");
+  return res.json();
+}
+
+export async function uploadRAGDocument(formData: FormData): Promise<any> {
+  const res = await fetch(`${API_BASE}/rag/documents/upload`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Upload failed" }));
+    throw new Error(err.detail || "Failed to upload and index scientific document");
+  }
+  return res.json();
+}
+
+export async function retrieveEvidence(payload: {
+  formula: string;
+  reduced_formula?: string;
+  elements?: string[];
+  application?: string;
+  max_results?: number;
+  include_external_sources?: boolean;
+}): Promise<any> {
+  const res = await fetch(`${API_BASE}/rag/retrieve`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error("Failed to retrieve scientific evidence");
+  return res.json();
+}
+
+export async function runRAGValidation(payload: {
+  candidate_id?: string;
+  formula?: string;
+  cif_string?: string;
+  application?: string;
+  llm_provider?: string;
+}): Promise<any> {
+  const res = await fetch(`${API_BASE}/rag/validate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Validation failed" }));
+    throw new Error(err.detail || "RAG Scientific Validation failed");
+  }
+  return res.json();
+}
+
+export async function getRAGReport(candidate_id: string): Promise<any> {
+  const res = await fetch(`${API_BASE}/rag/reports/${candidate_id}`, { cache: "no-store" });
+  if (!res.ok) {
+    if (res.status === 404) return null;
+    throw new Error(`Failed to fetch report for candidate ${candidate_id}`);
+  }
+  return res.json();
+}

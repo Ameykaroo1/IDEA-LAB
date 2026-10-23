@@ -344,3 +344,122 @@ export interface DashboardStats {
   top_ranked: number;
   dft_queue: number;
 }
+
+// ==========================================
+// RAG Scientific Validation Types
+// ==========================================
+
+export type ValidationCheckStatus = "PASS" | "FAIL" | "WARNING" | "UNKNOWN" | "NOT_RUN";
+
+export interface ScientificCheckResult {
+  name: string;
+  status: ValidationCheckStatus;
+  detail: string;
+  category: "GEOMETRY" | "CHEMISTRY" | "STABILITY" | "TARGET_PROPERTIES";
+  actual_value?: any;
+  reference_value?: any;
+  unit?: string | null;
+  source_or_method?: string | null;
+}
+
+export interface EvidenceItem {
+  chunk_id: string;
+  document_id: string;
+  title: string;
+  authors?: string | null;
+  publication_year?: number | null;
+  doi_or_url?: string | null;
+  page_number?: number | null;
+  passage_text: string;
+  relevance_score: number;
+  match_type: "EXACT_FORMULA" | "CHEMICAL_ANALOG" | "SEMANTIC_SIMILARITY" | "PROPERTY_MATCH" | "DATABASE_RECORD";
+  matched_formulas: string[];
+  source_type: string;
+}
+
+export interface CitationItem {
+  citation_id: string;
+  title: string;
+  authors?: string | null;
+  year?: number | null;
+  source: string;
+  url_or_doi?: string | null;
+  page_or_section?: string | null;
+  relevance_summary: string;
+}
+
+export interface ComparableMaterial {
+  formula: string;
+  similarity_type: "EXACT_MATCH" | "ISOSTRUCTURAL" | "SAME_CHEMICAL_SYSTEM" | "KNOWN_ANALOG";
+  reported_stability?: string | null;
+  reported_conductivity?: string | null;
+  key_properties: Record<string, any>;
+  reference_source: string;
+}
+
+export interface RAGValidationReport {
+  report_id: string;
+  candidate_id: string;
+  formula: string;
+  reduced_formula: string;
+  application: string;
+  timestamp: string;
+  overall_verdict: "FAVORABLE_FOR_DFT" | "MARGINAL_WITH_CONCERNS" | "UNFAVORABLE" | "INSUFFICIENT_EVIDENCE";
+  verdict_badge: string;
+  confidence_level: "HIGH" | "MEDIUM" | "LOW";
+  executive_summary: string;
+  checks_summary: Record<string, ValidationCheckStatus>;
+  checks: ScientificCheckResult[];
+  geometry_assessment: Record<string, any>;
+  chemistry_assessment: Record<string, any>;
+  stability_assessment: Record<string, any>;
+  target_properties_assessment: Record<string, any>;
+  literature_evidence: EvidenceItem[];
+  comparable_materials: ComparableMaterial[];
+  citations: CitationItem[];
+  scientific_risks: string[];
+  missing_evidence_and_unknowns: string[];
+  recommended_computational_tests: string[];
+  recommended_experimental_tests: string[];
+  llm_provider: string;
+  llm_model: string;
+  retrieval_mode: string;
+  scientific_disclaimer: string;
+}
+
+export interface RAGDocument {
+  document_id: string;
+  title: string;
+  authors?: string | null;
+  publication_year?: number | null;
+  doi_or_url?: string | null;
+  source_type: string;
+  chunk_count: number;
+  formulas_mentioned: string[];
+}
+
+export interface ConnectorsStatusResponse {
+  materials_project: {
+    name: string;
+    configured: boolean;
+    status: string;
+    url: string;
+  };
+  cod: {
+    name: string;
+    configured: boolean;
+    status: string;
+    url: string;
+  };
+  local_catalog: {
+    name: string;
+    configured: boolean;
+    status: string;
+    database_path: string;
+  };
+  vector_store: {
+    total_chunks: number;
+    total_documents: number;
+    backend: string;
+  };
+}

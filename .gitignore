@@ -42,3 +42,4 @@ data/reference_catalog.db
 data/jarvis_dft/*.zip
 data/mp20/*.zip
 data/raw/
+data/rag_storage/chroma_db/

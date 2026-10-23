@@ -13,7 +13,8 @@ import {
   Cpu,
   CheckCircle2,
   Menu,
-  X
+  X,
+  ShieldCheck
 } from "lucide-react";
 import { getHealth } from "@/lib/api";
 
@@ -31,6 +32,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/discover", label: "Discover", icon: Sparkles },
     { href: "/candidates", label: "Materials", icon: Atom },
+    { href: "/scientific-validation", label: "RAG Validation", icon: ShieldCheck },
     { href: "/datasets", label: "Dataset", icon: Database },
     { href: "/#about", label: "About", icon: Info },
   ];

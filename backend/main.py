@@ -6,6 +6,7 @@ Generative AI-Based Novel Crystal Material Discovery for Advanced Energy Applica
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.api.routes import router
+from backend.api.rag_routes import rag_router
 
 app = FastAPI(
     title="CRYSTAL-X Material Discovery Platform",
@@ -32,6 +33,7 @@ app.add_middleware(
 )
 
 app.include_router(router)
+app.include_router(rag_router)
 
 
 @app.get("/")

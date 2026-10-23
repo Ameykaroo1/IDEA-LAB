@@ -1,0 +1,788 @@
+{
+  "custom-Li10GeP2S12": {
+    "report_id": "rag-report-20261023230018-custom",
+    "candidate_id": "custom-Li10GeP2S12",
+    "formula": "Li10GeP2S12",
+    "reduced_formula": "Li2GePS2",
+    "application": "Solid electrolyte",
+    "timestamp": "2026-10-23T23:00:18.297568",
+    "overall_verdict": "FAVORABLE_FOR_DFT",
+    "verdict_badge": "FAVORABLE \u2014 Candidate for Downstream DFT",
+    "confidence_level": "HIGH",
+    "executive_summary": "Candidate Li10GeP2S12 passes all crystallographic, stoichiometry, and energy screening thresholds. It is a viable structural proposal for downstream DFT relaxation and property characterization in Solid electrolyte applications.",
+    "checks_summary": {
+      "Structure File Parsing": "PASS",
+      "Lattice Geometry & Volume": "PASS",
+      "Interatomic Distance Heuristic": "PASS",
+      "Crystallographic Symmetry Analysis": "PASS",
+      "Chemical Composition Validity": "PASS",
+      "Element Restrictions": "PASS",
+      "Charge Neutrality & Oxidation State Plausibility": "PASS",
+      "Thermodynamic Convex Hull Stability (Ehull)": "UNKNOWN",
+      "Electronic Band Gap & Insulation": "UNKNOWN",
+      "Ionic Conductivity Assessment": "UNKNOWN",
+      "Theoretical Specific Capacity": "NOT_RUN"
+    },
+    "checks": [
+      {
+        "name": "Structure File Parsing",
+        "status": "PASS",
+        "detail": "CIF syntax verified; crystal structure successfully parsed with valid lattice vectors.",
+        "category": "GEOMETRY",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": "pymatgen.io.cif.CifParser"
+      },
+      {
+        "name": "Lattice Geometry & Volume",
+        "status": "PASS",
+        "detail": "Lattice is physically well-formed with positive unit cell volume (960.36 \u00c5\u00b3).",
+        "category": "GEOMETRY",
+        "actual_value": 960.3649920000001,
+        "reference_value": null,
+        "unit": "\u00c5\u00b3",
+        "source_or_method": null
+      },
+      {
+        "name": "Interatomic Distance Heuristic",
+        "status": "PASS",
+        "detail": "All interatomic distances satisfy physical spacing (minimum 2.27 \u00c5 between ('Li', 'Li')).",
+        "category": "GEOMETRY",
+        "actual_value": 2.2734,
+        "reference_value": null,
+        "unit": "\u00c5",
+        "source_or_method": null
+      },
+      {
+        "name": "Crystallographic Symmetry Analysis",
+        "status": "PASS",
+        "detail": "Symmetry resolved: Space Group P1 (#1), Crystal System: Triclinic.",
+        "category": "GEOMETRY",
+        "actual_value": "P1",
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": "spglib.SpacegroupAnalyzer (symprec=0.1)"
+      },
+      {
+        "name": "Chemical Composition Validity",
+        "status": "PASS",
+        "detail": "Stoichiometry 'Li10Ge(PS6)2' is chemically well-defined.",
+        "category": "CHEMISTRY",
+        "actual_value": "Li10Ge(PS6)2",
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": "pymatgen.core.Composition"
+      },
+      {
+        "name": "Element Restrictions",
+        "status": "PASS",
+        "detail": "No restricted elements flagged.",
+        "category": "CHEMISTRY",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": null
+      },
+      {
+        "name": "Charge Neutrality & Oxidation State Plausibility",
+        "status": "PASS",
+        "detail": "Plausible charge-neutral oxidation states identified: {'Li': 1.0, 'Ge': 4.0, 'P': 5.0, 'S': -2.0}.",
+        "category": "CHEMISTRY",
+        "actual_value": "{'Li': 1.0, 'Ge': 4.0, 'P': 5.0, 'S': -2.0}",
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": "pymatgen.core.Composition.oxi_state_guesses"
+      },
+      {
+        "name": "Thermodynamic Convex Hull Stability (Ehull)",
+        "status": "UNKNOWN",
+        "detail": "Energy above hull not calculated for this candidate. Ab initio DFT relaxation required.",
+        "category": "STABILITY",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": null
+      },
+      {
+        "name": "Electronic Band Gap & Insulation",
+        "status": "UNKNOWN",
+        "detail": "Electronic band gap has not been calculated.",
+        "category": "TARGET_PROPERTIES",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": null
+      },
+      {
+        "name": "Ionic Conductivity Assessment",
+        "status": "UNKNOWN",
+        "detail": "Candidate-specific ionic conductivity is unknown. Requires NEB barrier calculation or AIMD simulation.",
+        "category": "TARGET_PROPERTIES",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": null
+      },
+      {
+        "name": "Theoretical Specific Capacity",
+        "status": "NOT_RUN",
+        "detail": "Not an intercalation electrode application; capacity check not applicable.",
+        "category": "TARGET_PROPERTIES",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": null
+      }
+    ],
+    "geometry_assessment": {
+      "volume_angstrom3": 960.3649920000001,
+      "lattice_lengths": [
+        8.72,
+        8.72,
+        12.63
+      ],
+      "lattice_angles": [
+        90.0,
+        90.0,
+        90.0
+      ],
+      "num_sites": 6,
+      "min_interatomic_distance_angstrom": 2.2734,
+      "closest_pair": [
+        "Li",
+        "Li"
+      ],
+      "space_group": "P1 (#1)",
+      "crystal_system": "Triclinic"
+    },
+    "chemistry_assessment": {
+      "formula": "Li10 Ge1 P2 S12",
+      "reduced_formula": "Li10Ge(PS6)2",
+      "elements": [
+        "Li",
+        "Ge",
+        "P",
+        "S"
+      ],
+      "weight": 588.777524,
+      "oxidation_states": {
+        "Li": 1.0,
+        "Ge": 4.0,
+        "P": 5.0,
+        "S": -2.0
+      },
+      "charge_balanced": true
+    },
+    "stability_assessment": {},
+    "target_properties_assessment": {},
+    "literature_evidence": [
+      {
+        "chunk_id": "chk-0f6d38909ae2",
+        "document_id": "doc-396ef9f24d",
+        "title": "A superionic lithium conductor Li10GeP2S12 with 12 mS/cm conductivity",
+        "authors": "Kamaya, N., Homma, K., Kanno, R. et al.",
+        "publication_year": 2011,
+        "doi_or_url": "https://doi.org/10.1038/nmat3066",
+        "page_number": 1,
+        "passage_text": "Solid-state lithium batteries offer enhanced safety and energy density. Li10GeP2S12 (LGPS) represents a breakthrough solid electrolyte exhibiting an exceptionally high bulk ionic conductivity of 1.2 x 10^-2 S/cm (12 mS/cm) at room temperature, with an activation energy of 0.22-0.25 eV. The structure crystallizes in space group P4_2/nmc with a three-dimensional Li conduction network facilitated by 1D channels along the c-axis and bridging inter-channel hops. However, LGPS possesses major scientific limitations: high thermodynamic reactivity against metallic lithium anode, forming a mixed electronic-ionic conducting decomposition layer containing Li3P, Li2S, and Li-Ge alloy. Additionally, thiophosphates suffer severe air and moisture sensitivity, hydrolyzing into toxic H2S gas upon exposure to ambient humidity.",
+        "relevance_score": 0.884,
+        "match_type": "EXACT_FORMULA",
+        "matched_formulas": [
+          "H2S",
+          "LGPS",
+          "Li10GeP2S12",
+          "Li2S",
+          "Li3P"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-cc370c8e3019",
+        "document_id": "doc-fe18f89680",
+        "title": "Fast Lithium-Ion Conduction in Garnet-Type Li7La3Zr2O12 (LLZO)",
+        "authors": "Murugan, R., Thangadurai, V., Weppner, W.",
+        "publication_year": 2007,
+        "doi_or_url": "https://doi.org/10.1002/anie.200701144",
+        "page_number": 1,
+        "passage_text": "Cubic garnet Li7La3Zr2O12 (LLZO) is a premier oxide solid electrolyte for solid-state batteries. The cubic phase, stabilized by supervalent dopants like Al, Ga, Ta, or Nb, exhibits a bulk ionic conductivity of 1 x 10^-3 S/cm (1 mS/cm) at 298 K, with a wide electrochemical stability window up to 6 V vs Li/Li+. Unlike sulfides, LLZO possesses excellent thermodynamic and chemical stability in direct contact with metallic Li. However, key experimental concerns include interfacial impedance from surface Li2CO3 passivation layers formed via atmospheric moisture/CO2 reaction, and lithium dendrite propagation along oxide grain boundaries at critical current densities exceeding 1.5 mA/cm2.",
+        "relevance_score": 0.605,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "Li2CO3",
+          "Li7La3Zr2O12"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-644d55505b81",
+        "document_id": "doc-3a33cdfe04",
+        "title": "Computational Screening and Thermodynamic Convex Hull Stability Criteria",
+        "authors": "Sun, W., Dacek, S. T., Ong, S. P., Hautier, G., Jain, A., Ceder, G.",
+        "publication_year": 2016,
+        "doi_or_url": "https://doi.org/10.1126/sciadv.1600225",
+        "page_number": 1,
+        "passage_text": "The thermodynamic stability of candidate inorganic crystals is evaluated by calculating energy above the convex hull (E_hull). A candidate with E_hull = 0 is strictly stable in the zero-temperature phase diagram. A threshold of E_hull <= 0.05 eV/atom (50 meV/atom) is universally adopted as the computational standard for synthesizable or metastable materials, as entropic contributions at synthesis temperatures often stabilize phases within this energy window. However, computational E_hull does not account for kinetic trapping, atmospheric oxidation, or dynamic phonon stability. Materials scientists must conduct phonon dispersion calculations to verify the absence of imaginary frequencies before declaring dynamic structural viability.",
+        "relevance_score": 0.596,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-39ca25ff3aae",
+        "document_id": "doc-a7867d4619",
+        "title": "High-Conductivity NASICON Sodium Superionic Conductor Na3Zr2Si2PO12",
+        "authors": "Hong, H. Y-P., Goodenough, J. B.",
+        "publication_year": 1976,
+        "doi_or_url": "https://doi.org/10.1016/0025-5408(76)90073-8",
+        "page_number": 1,
+        "passage_text": "Na3Zr2Si2PO12 (NASICON) is a benchmark solid electrolyte for sodium-ion energy storage frameworks. Its framework consists of corner-sharing ZrO6 octahedra and (Si/P)O4 tetrahedra forming large 3D interstitial migration bottlenecks. Na3Zr2Si2PO12 exhibits ionic conductivities of 1-3 mS/cm at room temperature with low activation energy (~0.30 eV). Phase stability analysis indicates that stoichiometric composition is stable up to 1000 \u00b0C, but a monoclinic-to-rhombohedral structural phase transition occurs near 150 \u00b0C. Key challenges in battery integration are high sintering temperatures (>1100 \u00b0C) leading to Na2O volatilization and refractory grain boundary resistance.",
+        "relevance_score": 0.589,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "NASICON",
+          "Na3Zr2Si2PO12"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-310e3be80387",
+        "document_id": "doc-4427a3faaf",
+        "title": "Halide-based solid electrolytes for high-voltage all-solid-state batteries",
+        "authors": "Li, X., Liang, J., Sun, X. et al.",
+        "publication_year": 2020,
+        "doi_or_url": "https://doi.org/10.1039/D0EE01017K",
+        "page_number": 1,
+        "passage_text": "Ternary lithium halides such as Li3InCl6 and Li3YCl6 demonstrate exceptional oxidative stability exceeding 4.5 V vs Li/Li+, making them compatible with high-voltage 4V-class cathode active materials (e.g., LiNi0.8Co0.1Mn0.1O2) without protective coatings. Li3InCl6 exhibits room-temperature lithium ionic conductivity of 1.4-2.0 mS/cm and good mechanical deformability. However, indium and yttrium chlorides are costly and undergo reduction at low potentials (< 1.5 V vs Li), necessitating a protective bilayer or sulfide interlayer against lithium metal.",
+        "relevance_score": 0.582,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "Li3InCl6",
+          "Li3YCl6",
+          "LiNi0.8Co0.1Mn0.1O2"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-04f3b0167be7",
+        "document_id": "doc-7c2d7dd92d",
+        "title": "Phospho-olivines as Positive-Electrode Materials for Rechargeable Lithium Batteries",
+        "authors": "Padhi, A. K., Nanjundaswamy, K. S., Goodenough, J. B.",
+        "publication_year": 1997,
+        "doi_or_url": "https://doi.org/10.1149/1.1837571",
+        "page_number": 1,
+        "passage_text": "Triphylite LiFePO4 (space group Pnma, olivine framework) operates as a high-safety cathode material with a flat operating voltage of 3.45 V vs Li/Li+ and a theoretical specific capacity of 170 mAh/g via single-electron Fe3+/Fe2+ redox. Lithium extraction occurs via a two-phase miscibility gap reaction between LiFePO4 and FePO4 with a small unit-cell volume change of ~6.8%, imparting remarkable cycle life. However, pristine LiFePO4 suffers from low intrinsic electronic conductivity (~10^-9 S/cm) and 1D curved lithium diffusion channels along the [010] direction, requiring carbon coating and nanosizing to achieve rate capability.",
+        "relevance_score": 0.578,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "FePO4",
+          "LiFePO4"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      }
+    ],
+    "comparable_materials": [],
+    "citations": [
+      {
+        "citation_id": "ref-1",
+        "title": "A superionic lithium conductor Li10GeP2S12 with 12 mS/cm conductivity",
+        "authors": "Kamaya, N., Homma, K., Kanno, R. et al.",
+        "year": 2011,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1038/nmat3066",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 88% (Exact Formula)"
+      },
+      {
+        "citation_id": "ref-2",
+        "title": "Fast Lithium-Ion Conduction in Garnet-Type Li7La3Zr2O12 (LLZO)",
+        "authors": "Murugan, R., Thangadurai, V., Weppner, W.",
+        "year": 2007,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1002/anie.200701144",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 60% (Property Match)"
+      },
+      {
+        "citation_id": "ref-3",
+        "title": "Computational Screening and Thermodynamic Convex Hull Stability Criteria",
+        "authors": "Sun, W., Dacek, S. T., Ong, S. P., Hautier, G., Jain, A., Ceder, G.",
+        "year": 2016,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1126/sciadv.1600225",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 59% (Property Match)"
+      },
+      {
+        "citation_id": "ref-4",
+        "title": "High-Conductivity NASICON Sodium Superionic Conductor Na3Zr2Si2PO12",
+        "authors": "Hong, H. Y-P., Goodenough, J. B.",
+        "year": 1976,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1016/0025-5408(76)90073-8",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 58% (Property Match)"
+      },
+      {
+        "citation_id": "ref-5",
+        "title": "Halide-based solid electrolytes for high-voltage all-solid-state batteries",
+        "authors": "Li, X., Liang, J., Sun, X. et al.",
+        "year": 2020,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1039/D0EE01017K",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 58% (Property Match)"
+      },
+      {
+        "citation_id": "ref-6",
+        "title": "Phospho-olivines as Positive-Electrode Materials for Rechargeable Lithium Batteries",
+        "authors": "Padhi, A. K., Nanjundaswamy, K. S., Goodenough, J. B.",
+        "year": 1997,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1149/1.1837571",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 57% (Property Match)"
+      }
+    ],
+    "scientific_risks": [
+      "Thiophosphate vulnerability: Known to hydrolyze under ambient air exposure, releasing toxic H2S gas.",
+      "Anodic reduction: Low reduction potential vs metallic Li leads to resistive interphase formation."
+    ],
+    "missing_evidence_and_unknowns": [
+      "DFT migration barrier calculation (Nudged Elastic Band / NEB) for true mobile-ion activation energy.",
+      "Phonon dispersion bandstructure to confirm dynamic lattice stability (absence of imaginary soft modes).",
+      "Electrochemical stability window calculation against metallic lithium/sodium anodes."
+    ],
+    "recommended_computational_tests": [
+      "VASP spin-polarized PBEsol/SCAN functional ionic relaxation with dense k-point grid (POSCAR).",
+      "Ab initio Molecular Dynamics (AIMD) at 600K-1000K to extrapolate ionic diffusivity.",
+      "Grand potential phase diagram calculation for interface reactivity with selected cathode and anode."
+    ],
+    "recommended_experimental_tests": [
+      "Solid-state sintering or high-energy mechanical ball milling under dry Argon atmosphere.",
+      "Powder X-ray Diffraction (PXRD) with Rietveld refinement to verify crystallographic space group.",
+      "Electrochemical Impedance Spectroscopy (EIS) across -20 \u00b0C to 80 \u00b0C for Arrhenius ionic conductivity."
+    ],
+    "llm_provider": "OFFLINE_SCIENTIFIC_ENGINE",
+    "llm_model": "Deterministic Domain Rules",
+    "retrieval_mode": "HYBRID_SEMANTIC_EXACT_FORMULA",
+    "scientific_disclaimer": "RAG scientific validation provides literature-grounded evidence and computational tool verification. It does not guarantee thermodynamic stability, synthesizability, or electrochemical performance. Literature existence of related materials does not prove stability of this specific candidate."
+  },
+  "C-010": {
+    "report_id": "rag-report-20261023234202-C-010",
+    "candidate_id": "C-010",
+    "formula": "Li4 Si1 O3",
+    "reduced_formula": "Li4SiO3",
+    "application": "Anode material",
+    "timestamp": "2026-10-23T23:42:02.023995",
+    "overall_verdict": "FAVORABLE_FOR_DFT",
+    "verdict_badge": "FAVORABLE \u2014 Candidate for Downstream DFT",
+    "confidence_level": "HIGH",
+    "executive_summary": "Candidate Li4 passes all crystallographic, stoichiometry, and energy screening thresholds. It is a viable structural proposal for downstream DFT relaxation and property characterization in Anode material applications.",
+    "checks_summary": {
+      "Structure File Parsing": "PASS",
+      "Lattice Geometry & Volume": "PASS",
+      "Interatomic Distance Heuristic": "PASS",
+      "Crystallographic Symmetry Analysis": "PASS",
+      "Chemical Composition Validity": "PASS",
+      "Element Restrictions": "PASS",
+      "Charge Neutrality & Oxidation State Plausibility": "WARNING",
+      "Thermodynamic Convex Hull Stability (Ehull)": "PASS",
+      "Electronic Band Gap & Insulation": "WARNING",
+      "Ionic Conductivity Assessment": "UNKNOWN",
+      "Theoretical Specific Capacity": "NOT_RUN"
+    },
+    "checks": [
+      {
+        "name": "Structure File Parsing",
+        "status": "PASS",
+        "detail": "CIF syntax verified; crystal structure successfully parsed with valid lattice vectors.",
+        "category": "GEOMETRY",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": "pymatgen.io.cif.CifParser"
+      },
+      {
+        "name": "Lattice Geometry & Volume",
+        "status": "PASS",
+        "detail": "Lattice is physically well-formed with positive unit cell volume (1931.22 \u00c5\u00b3).",
+        "category": "GEOMETRY",
+        "actual_value": 1931.2171928522228,
+        "reference_value": null,
+        "unit": "\u00c5\u00b3",
+        "source_or_method": null
+      },
+      {
+        "name": "Interatomic Distance Heuristic",
+        "status": "PASS",
+        "detail": "All interatomic distances satisfy physical spacing (minimum 3.66 \u00c5 between ('Li', 'O')).",
+        "category": "GEOMETRY",
+        "actual_value": 3.663303273062973,
+        "reference_value": null,
+        "unit": "\u00c5",
+        "source_or_method": null
+      },
+      {
+        "name": "Crystallographic Symmetry Analysis",
+        "status": "PASS",
+        "detail": "Symmetry resolved: Space Group R3m (#160), Crystal System: Trigonal.",
+        "category": "GEOMETRY",
+        "actual_value": "R3m",
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": "spglib.SpacegroupAnalyzer (symprec=0.1)"
+      },
+      {
+        "name": "Chemical Composition Validity",
+        "status": "PASS",
+        "detail": "Stoichiometry 'Li4SiO3' is chemically well-defined.",
+        "category": "CHEMISTRY",
+        "actual_value": "Li4SiO3",
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": "pymatgen.core.Composition"
+      },
+      {
+        "name": "Element Restrictions",
+        "status": "PASS",
+        "detail": "No restricted elements flagged.",
+        "category": "CHEMISTRY",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": null
+      },
+      {
+        "name": "Charge Neutrality & Oxidation State Plausibility",
+        "status": "WARNING",
+        "detail": "Standard electronegativity rules yielded ambiguous oxidation states. May indicate a mixed-valence, intermetallic, or radical phase.",
+        "category": "CHEMISTRY",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": "pymatgen.core.Composition.oxi_state_guesses"
+      },
+      {
+        "name": "Thermodynamic Convex Hull Stability (Ehull)",
+        "status": "PASS",
+        "detail": "Predicted Ehull of 0.012 eV/atom satisfies the standard metastable synthesizability threshold (<= 0.05 eV/atom).",
+        "category": "STABILITY",
+        "actual_value": 0.012,
+        "reference_value": 0.05,
+        "unit": "eV/atom",
+        "source_or_method": "Convex Hull Screening Model"
+      },
+      {
+        "name": "Electronic Band Gap & Insulation",
+        "status": "WARNING",
+        "detail": "Semiconducting band gap (1.82 eV).",
+        "category": "TARGET_PROPERTIES",
+        "actual_value": 1.82,
+        "reference_value": null,
+        "unit": "eV",
+        "source_or_method": "ML / Empirical Band Gap Screening"
+      },
+      {
+        "name": "Ionic Conductivity Assessment",
+        "status": "UNKNOWN",
+        "detail": "Candidate-specific ionic conductivity is unknown. Requires NEB barrier calculation or AIMD simulation.",
+        "category": "TARGET_PROPERTIES",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": null
+      },
+      {
+        "name": "Theoretical Specific Capacity",
+        "status": "NOT_RUN",
+        "detail": "Not an intercalation electrode application; capacity check not applicable.",
+        "category": "TARGET_PROPERTIES",
+        "actual_value": null,
+        "reference_value": null,
+        "unit": null,
+        "source_or_method": null
+      }
+    ],
+    "geometry_assessment": {
+      "volume_angstrom3": 1931.2171928522228,
+      "lattice_lengths": [
+        12.21101091,
+        12.21101091,
+        14.95537299
+      ],
+      "lattice_angles": [
+        90.0,
+        90.0,
+        119.99999999999999
+      ],
+      "num_sites": 24,
+      "min_interatomic_distance_angstrom": 3.663303273062973,
+      "closest_pair": [
+        "Li",
+        "O"
+      ],
+      "space_group": "R3m (#160)",
+      "crystal_system": "Trigonal"
+    },
+    "chemistry_assessment": {
+      "formula": "Li4 Si1 O3",
+      "reduced_formula": "Li4SiO3",
+      "elements": [
+        "Li",
+        "Si",
+        "O"
+      ],
+      "weight": 103.8477,
+      "charge_balanced": false
+    },
+    "stability_assessment": {
+      "energy_above_hull_ev_per_atom": 0.012,
+      "threshold_ev_per_atom": 0.05
+    },
+    "target_properties_assessment": {
+      "band_gap_ev": 1.82
+    },
+    "literature_evidence": [
+      {
+        "chunk_id": "chk-644d55505b81",
+        "document_id": "doc-3a33cdfe04",
+        "title": "Computational Screening and Thermodynamic Convex Hull Stability Criteria",
+        "authors": "Sun, W., Dacek, S. T., Ong, S. P., Hautier, G., Jain, A., Ceder, G.",
+        "publication_year": 2016,
+        "doi_or_url": "https://doi.org/10.1126/sciadv.1600225",
+        "page_number": 1,
+        "passage_text": "The thermodynamic stability of candidate inorganic crystals is evaluated by calculating energy above the convex hull (E_hull). A candidate with E_hull = 0 is strictly stable in the zero-temperature phase diagram. A threshold of E_hull <= 0.05 eV/atom (50 meV/atom) is universally adopted as the computational standard for synthesizable or metastable materials, as entropic contributions at synthesis temperatures often stabilize phases within this energy window. However, computational E_hull does not account for kinetic trapping, atmospheric oxidation, or dynamic phonon stability. Materials scientists must conduct phonon dispersion calculations to verify the absence of imaginary frequencies before declaring dynamic structural viability.",
+        "relevance_score": 0.608,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-0f6d38909ae2",
+        "document_id": "doc-396ef9f24d",
+        "title": "A superionic lithium conductor Li10GeP2S12 with 12 mS/cm conductivity",
+        "authors": "Kamaya, N., Homma, K., Kanno, R. et al.",
+        "publication_year": 2011,
+        "doi_or_url": "https://doi.org/10.1038/nmat3066",
+        "page_number": 1,
+        "passage_text": "Solid-state lithium batteries offer enhanced safety and energy density. Li10GeP2S12 (LGPS) represents a breakthrough solid electrolyte exhibiting an exceptionally high bulk ionic conductivity of 1.2 x 10^-2 S/cm (12 mS/cm) at room temperature, with an activation energy of 0.22-0.25 eV. The structure crystallizes in space group P4_2/nmc with a three-dimensional Li conduction network facilitated by 1D channels along the c-axis and bridging inter-channel hops. However, LGPS possesses major scientific limitations: high thermodynamic reactivity against metallic lithium anode, forming a mixed electronic-ionic conducting decomposition layer containing Li3P, Li2S, and Li-Ge alloy. Additionally, thiophosphates suffer severe air and moisture sensitivity, hydrolyzing into toxic H2S gas upon exposure to ambient humidity.",
+        "relevance_score": 0.589,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "Li10GeP2S12",
+          "Li2S",
+          "Li3P"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-cc370c8e3019",
+        "document_id": "doc-fe18f89680",
+        "title": "Fast Lithium-Ion Conduction in Garnet-Type Li7La3Zr2O12 (LLZO)",
+        "authors": "Murugan, R., Thangadurai, V., Weppner, W.",
+        "publication_year": 2007,
+        "doi_or_url": "https://doi.org/10.1002/anie.200701144",
+        "page_number": 1,
+        "passage_text": "Cubic garnet Li7La3Zr2O12 (LLZO) is a premier oxide solid electrolyte for solid-state batteries. The cubic phase, stabilized by supervalent dopants like Al, Ga, Ta, or Nb, exhibits a bulk ionic conductivity of 1 x 10^-3 S/cm (1 mS/cm) at 298 K, with a wide electrochemical stability window up to 6 V vs Li/Li+. Unlike sulfides, LLZO possesses excellent thermodynamic and chemical stability in direct contact with metallic Li. However, key experimental concerns include interfacial impedance from surface Li2CO3 passivation layers formed via atmospheric moisture/CO2 reaction, and lithium dendrite propagation along oxide grain boundaries at critical current densities exceeding 1.5 mA/cm2.",
+        "relevance_score": 0.589,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "CO2",
+          "LLZO",
+          "Li2CO3",
+          "Li7La3Zr2O12"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-39ca25ff3aae",
+        "document_id": "doc-a7867d4619",
+        "title": "High-Conductivity NASICON Sodium Superionic Conductor Na3Zr2Si2PO12",
+        "authors": "Hong, H. Y-P., Goodenough, J. B.",
+        "publication_year": 1976,
+        "doi_or_url": "https://doi.org/10.1016/0025-5408(76)90073-8",
+        "page_number": 1,
+        "passage_text": "Na3Zr2Si2PO12 (NASICON) is a benchmark solid electrolyte for sodium-ion energy storage frameworks. Its framework consists of corner-sharing ZrO6 octahedra and (Si/P)O4 tetrahedra forming large 3D interstitial migration bottlenecks. Na3Zr2Si2PO12 exhibits ionic conductivities of 1-3 mS/cm at room temperature with low activation energy (~0.30 eV). Phase stability analysis indicates that stoichiometric composition is stable up to 1000 \u00b0C, but a monoclinic-to-rhombohedral structural phase transition occurs near 150 \u00b0C. Key challenges in battery integration are high sintering temperatures (>1100 \u00b0C) leading to Na2O volatilization and refractory grain boundary resistance.",
+        "relevance_score": 0.588,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "NASICON",
+          "Na2O",
+          "Na3Zr2Si2PO12",
+          "ZrO6"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-04f3b0167be7",
+        "document_id": "doc-7c2d7dd92d",
+        "title": "Phospho-olivines as Positive-Electrode Materials for Rechargeable Lithium Batteries",
+        "authors": "Padhi, A. K., Nanjundaswamy, K. S., Goodenough, J. B.",
+        "publication_year": 1997,
+        "doi_or_url": "https://doi.org/10.1149/1.1837571",
+        "page_number": 1,
+        "passage_text": "Triphylite LiFePO4 (space group Pnma, olivine framework) operates as a high-safety cathode material with a flat operating voltage of 3.45 V vs Li/Li+ and a theoretical specific capacity of 170 mAh/g via single-electron Fe3+/Fe2+ redox. Lithium extraction occurs via a two-phase miscibility gap reaction between LiFePO4 and FePO4 with a small unit-cell volume change of ~6.8%, imparting remarkable cycle life. However, pristine LiFePO4 suffers from low intrinsic electronic conductivity (~10^-9 S/cm) and 1D curved lithium diffusion channels along the [010] direction, requiring carbon coating and nanosizing to achieve rate capability.",
+        "relevance_score": 0.581,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "FePO4",
+          "LiFePO4"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      },
+      {
+        "chunk_id": "chk-310e3be80387",
+        "document_id": "doc-4427a3faaf",
+        "title": "Halide-based solid electrolytes for high-voltage all-solid-state batteries",
+        "authors": "Li, X., Liang, J., Sun, X. et al.",
+        "publication_year": 2020,
+        "doi_or_url": "https://doi.org/10.1039/D0EE01017K",
+        "page_number": 1,
+        "passage_text": "Ternary lithium halides such as Li3InCl6 and Li3YCl6 demonstrate exceptional oxidative stability exceeding 4.5 V vs Li/Li+, making them compatible with high-voltage 4V-class cathode active materials (e.g., LiNi0.8Co0.1Mn0.1O2) without protective coatings. Li3InCl6 exhibits room-temperature lithium ionic conductivity of 1.4-2.0 mS/cm and good mechanical deformability. However, indium and yttrium chlorides are costly and undergo reduction at low potentials (< 1.5 V vs Li), necessitating a protective bilayer or sulfide interlayer against lithium metal.",
+        "relevance_score": 0.578,
+        "match_type": "PROPERTY_MATCH",
+        "matched_formulas": [
+          "Li3InCl6",
+          "Li3YCl6",
+          "LiNi0.8Co0.1Mn0.1O2"
+        ],
+        "source_type": "PEER_REVIEWED_PAPER"
+      }
+    ],
+    "comparable_materials": [
+      {
+        "formula": "Li2SiO3",
+        "similarity_type": "SAME_CHEMICAL_SYSTEM",
+        "reported_stability": "Ehull: 0.000 eV/atom",
+        "reported_conductivity": null,
+        "key_properties": {
+          "crystal_system": null,
+          "space_group": "SpaceGroup #36",
+          "band_gap": 5.1122000000000005
+        },
+        "reference_source": "MP-20"
+      },
+      {
+        "formula": "Li2Si2O5",
+        "similarity_type": "SAME_CHEMICAL_SYSTEM",
+        "reported_stability": "Ehull: 0.000 eV/atom",
+        "reported_conductivity": null,
+        "key_properties": {
+          "crystal_system": null,
+          "space_group": "SpaceGroup #37",
+          "band_gap": 5.352
+        },
+        "reference_source": "MP-20"
+      },
+      {
+        "formula": "Li4SiO4",
+        "similarity_type": "SAME_CHEMICAL_SYSTEM",
+        "reported_stability": "Ehull: 0.017 eV/atom",
+        "reported_conductivity": null,
+        "key_properties": {
+          "crystal_system": null,
+          "space_group": "SpaceGroup #2",
+          "band_gap": 4.9652
+        },
+        "reference_source": "MP-20"
+      },
+      {
+        "formula": "Li4SiO4",
+        "similarity_type": "SAME_CHEMICAL_SYSTEM",
+        "reported_stability": "Ehull: 0.048 eV/atom",
+        "reported_conductivity": null,
+        "key_properties": {
+          "crystal_system": null,
+          "space_group": "SpaceGroup #1",
+          "band_gap": 5.0870000000000015
+        },
+        "reference_source": "MP-20"
+      }
+    ],
+    "citations": [
+      {
+        "citation_id": "ref-1",
+        "title": "Computational Screening and Thermodynamic Convex Hull Stability Criteria",
+        "authors": "Sun, W., Dacek, S. T., Ong, S. P., Hautier, G., Jain, A., Ceder, G.",
+        "year": 2016,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1126/sciadv.1600225",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 60% (Property Match)"
+      },
+      {
+        "citation_id": "ref-2",
+        "title": "A superionic lithium conductor Li10GeP2S12 with 12 mS/cm conductivity",
+        "authors": "Kamaya, N., Homma, K., Kanno, R. et al.",
+        "year": 2011,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1038/nmat3066",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 58% (Property Match)"
+      },
+      {
+        "citation_id": "ref-3",
+        "title": "Fast Lithium-Ion Conduction in Garnet-Type Li7La3Zr2O12 (LLZO)",
+        "authors": "Murugan, R., Thangadurai, V., Weppner, W.",
+        "year": 2007,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1002/anie.200701144",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 58% (Property Match)"
+      },
+      {
+        "citation_id": "ref-4",
+        "title": "High-Conductivity NASICON Sodium Superionic Conductor Na3Zr2Si2PO12",
+        "authors": "Hong, H. Y-P., Goodenough, J. B.",
+        "year": 1976,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1016/0025-5408(76)90073-8",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 58% (Property Match)"
+      },
+      {
+        "citation_id": "ref-5",
+        "title": "Phospho-olivines as Positive-Electrode Materials for Rechargeable Lithium Batteries",
+        "authors": "Padhi, A. K., Nanjundaswamy, K. S., Goodenough, J. B.",
+        "year": 1997,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1149/1.1837571",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 58% (Property Match)"
+      },
+      {
+        "citation_id": "ref-6",
+        "title": "Halide-based solid electrolytes for high-voltage all-solid-state batteries",
+        "authors": "Li, X., Liang, J., Sun, X. et al.",
+        "year": 2020,
+        "source": "PEER_REVIEWED_PAPER",
+        "url_or_doi": "https://doi.org/10.1039/D0EE01017K",
+        "page_or_section": "Page 1",
+        "relevance_summary": "Relevance: 57% (Property Match)"
+      }
+    ],
+    "scientific_risks": [
+      "Interfacial mechanical stability: Volume fluctuation during ion insertion/extraction may cause grain boundary delamination."
+    ],
+    "missing_evidence_and_unknowns": [
+      "DFT migration barrier calculation (Nudged Elastic Band / NEB) for true mobile-ion activation energy.",
+      "Phonon dispersion bandstructure to confirm dynamic lattice stability (absence of imaginary soft modes).",
+      "Electrochemical stability window calculation against metallic lithium/sodium anodes."
+    ],
+    "recommended_computational_tests": [
+      "VASP spin-polarized PBEsol/SCAN functional ionic relaxation with dense k-point grid (POSCAR).",
+      "Ab initio Molecular Dynamics (AIMD) at 600K-1000K to extrapolate ionic diffusivity.",
+      "Grand potential phase diagram calculation for interface reactivity with selected cathode and anode."
+    ],
+    "recommended_experimental_tests": [
+      "Solid-state sintering or high-energy mechanical ball milling under dry Argon atmosphere.",
+      "Powder X-ray Diffraction (PXRD) with Rietveld refinement to verify crystallographic space group.",
+      "Electrochemical Impedance Spectroscopy (EIS) across -20 \u00b0C to 80 \u00b0C for Arrhenius ionic conductivity."
+    ],
+    "llm_provider": "OFFLINE_SCIENTIFIC_ENGINE",
+    "llm_model": "Deterministic Domain Rules",
+    "retrieval_mode": "HYBRID_SEMANTIC_EXACT_FORMULA",
+    "scientific_disclaimer": "RAG scientific validation provides literature-grounded evidence and computational tool verification. It does not guarantee thermodynamic stability, synthesizability, or electrochemical performance. Literature existence of related materials does not prove stability of this specific candidate."
+  }
+}

@@ -136,6 +136,14 @@ export default function CandidateDetailPage() {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-2.5">
+          <Link
+            href={`/scientific-validation`}
+            className="px-3.5 py-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-semibold transition flex items-center gap-1.5 shadow-sm"
+          >
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span>RAG Scientific Validation</span>
+          </Link>
+
           <a
             href={`http://localhost:8000/api/candidates/${candidate.candidate_id}/cif`}
             download

@@ -1,0 +1,176 @@
+{
+  "total_chunks": 6,
+  "chunks": [
+    {
+      "chunk_id": "chk-0f6d38909ae2",
+      "document_id": "doc-396ef9f24d",
+      "content": "Solid-state lithium batteries offer enhanced safety and energy density. Li10GeP2S12 (LGPS) represents a breakthrough solid electrolyte exhibiting an exceptionally high bulk ionic conductivity of 1.2 x 10^-2 S/cm (12 mS/cm) at room temperature, with an activation energy of 0.22-0.25 eV. The structure crystallizes in space group P4_2/nmc with a three-dimensional Li conduction network facilitated by 1D channels along the c-axis and bridging inter-channel hops. However, LGPS possesses major scientific limitations: high thermodynamic reactivity against metallic lithium anode, forming a mixed electronic-ionic conducting decomposition layer containing Li3P, Li2S, and Li-Ge alloy. Additionally, thiophosphates suffer severe air and moisture sensitivity, hydrolyzing into toxic H2S gas upon exposure to ambient humidity.",
+      "chunk_index": 0,
+      "page_number": 1,
+      "section_title": null,
+      "title": "A superionic lithium conductor Li10GeP2S12 with 12 mS/cm conductivity",
+      "authors": "Kamaya, N., Homma, K., Kanno, R. et al.",
+      "publication_year": 2011,
+      "doi_or_url": "https://doi.org/10.1038/nmat3066",
+      "source_type": "PEER_REVIEWED_PAPER",
+      "chemical_systems": [
+        "G-L-P-S",
+        "Ge-Li-P-S",
+        "H-S",
+        "Li-P",
+        "Li-S"
+      ],
+      "formulas_mentioned": [
+        "H2S",
+        "LGPS",
+        "Li10GeP2S12",
+        "Li2S",
+        "Li3P"
+      ],
+      "property_tags": [
+        "ionic_conductivity",
+        "band_gap",
+        "migration_barrier",
+        "air_moisture_stability"
+      ],
+      "metadata": {}
+    },
+    {
+      "chunk_id": "chk-cc370c8e3019",
+      "document_id": "doc-fe18f89680",
+      "content": "Cubic garnet Li7La3Zr2O12 (LLZO) is a premier oxide solid electrolyte for solid-state batteries. The cubic phase, stabilized by supervalent dopants like Al, Ga, Ta, or Nb, exhibits a bulk ionic conductivity of 1 x 10^-3 S/cm (1 mS/cm) at 298 K, with a wide electrochemical stability window up to 6 V vs Li/Li+. Unlike sulfides, LLZO possesses excellent thermodynamic and chemical stability in direct contact with metallic Li. However, key experimental concerns include interfacial impedance from surface Li2CO3 passivation layers formed via atmospheric moisture/CO2 reaction, and lithium dendrite propagation along oxide grain boundaries at critical current densities exceeding 1.5 mA/cm2.",
+      "chunk_index": 0,
+      "page_number": 1,
+      "section_title": null,
+      "title": "Fast Lithium-Ion Conduction in Garnet-Type Li7La3Zr2O12 (LLZO)",
+      "authors": "Murugan, R., Thangadurai, V., Weppner, W.",
+      "publication_year": 2007,
+      "doi_or_url": "https://doi.org/10.1002/anie.200701144",
+      "source_type": "PEER_REVIEWED_PAPER",
+      "chemical_systems": [
+        "C-Li-O",
+        "C-O",
+        "L-O-Z",
+        "La-Li-O-Zr"
+      ],
+      "formulas_mentioned": [
+        "CO2",
+        "LLZO",
+        "Li2CO3",
+        "Li7La3Zr2O12"
+      ],
+      "property_tags": [
+        "ionic_conductivity",
+        "band_gap",
+        "air_moisture_stability"
+      ],
+      "metadata": {}
+    },
+    {
+      "chunk_id": "chk-39ca25ff3aae",
+      "document_id": "doc-a7867d4619",
+      "content": "Na3Zr2Si2PO12 (NASICON) is a benchmark solid electrolyte for sodium-ion energy storage frameworks. Its framework consists of corner-sharing ZrO6 octahedra and (Si/P)O4 tetrahedra forming large 3D interstitial migration bottlenecks. Na3Zr2Si2PO12 exhibits ionic conductivities of 1-3 mS/cm at room temperature with low activation energy (~0.30 eV). Phase stability analysis indicates that stoichiometric composition is stable up to 1000 \u00b0C, but a monoclinic-to-rhombohedral structural phase transition occurs near 150 \u00b0C. Key challenges in battery integration are high sintering temperatures (>1100 \u00b0C) leading to Na2O volatilization and refractory grain boundary resistance.",
+      "chunk_index": 0,
+      "page_number": 1,
+      "section_title": null,
+      "title": "High-Conductivity NASICON Sodium Superionic Conductor Na3Zr2Si2PO12",
+      "authors": "Hong, H. Y-P., Goodenough, J. B.",
+      "publication_year": 1976,
+      "doi_or_url": "https://doi.org/10.1016/0025-5408(76)90073-8",
+      "source_type": "PEER_REVIEWED_PAPER",
+      "chemical_systems": [
+        "A-C-I-N-O-S",
+        "Na-O",
+        "Na-O-P-Si-Zr",
+        "O-Zr"
+      ],
+      "formulas_mentioned": [
+        "NASICON",
+        "Na2O",
+        "Na3Zr2Si2PO12",
+        "ZrO6"
+      ],
+      "property_tags": [
+        "ionic_conductivity",
+        "band_gap",
+        "migration_barrier"
+      ],
+      "metadata": {}
+    },
+    {
+      "chunk_id": "chk-04f3b0167be7",
+      "document_id": "doc-7c2d7dd92d",
+      "content": "Triphylite LiFePO4 (space group Pnma, olivine framework) operates as a high-safety cathode material with a flat operating voltage of 3.45 V vs Li/Li+ and a theoretical specific capacity of 170 mAh/g via single-electron Fe3+/Fe2+ redox. Lithium extraction occurs via a two-phase miscibility gap reaction between LiFePO4 and FePO4 with a small unit-cell volume change of ~6.8%, imparting remarkable cycle life. However, pristine LiFePO4 suffers from low intrinsic electronic conductivity (~10^-9 S/cm) and 1D curved lithium diffusion channels along the [010] direction, requiring carbon coating and nanosizing to achieve rate capability.",
+      "chunk_index": 0,
+      "page_number": 1,
+      "section_title": null,
+      "title": "Phospho-olivines as Positive-Electrode Materials for Rechargeable Lithium Batteries",
+      "authors": "Padhi, A. K., Nanjundaswamy, K. S., Goodenough, J. B.",
+      "publication_year": 1997,
+      "doi_or_url": "https://doi.org/10.1149/1.1837571",
+      "source_type": "PEER_REVIEWED_PAPER",
+      "chemical_systems": [
+        "Fe-Li-O-P",
+        "Fe-O-P"
+      ],
+      "formulas_mentioned": [
+        "FePO4",
+        "LiFePO4"
+      ],
+      "property_tags": [
+        "ionic_conductivity",
+        "band_gap",
+        "capacity"
+      ],
+      "metadata": {}
+    },
+    {
+      "chunk_id": "chk-310e3be80387",
+      "document_id": "doc-4427a3faaf",
+      "content": "Ternary lithium halides such as Li3InCl6 and Li3YCl6 demonstrate exceptional oxidative stability exceeding 4.5 V vs Li/Li+, making them compatible with high-voltage 4V-class cathode active materials (e.g., LiNi0.8Co0.1Mn0.1O2) without protective coatings. Li3InCl6 exhibits room-temperature lithium ionic conductivity of 1.4-2.0 mS/cm and good mechanical deformability. However, indium and yttrium chlorides are costly and undergo reduction at low potentials (< 1.5 V vs Li), necessitating a protective bilayer or sulfide interlayer against lithium metal.",
+      "chunk_index": 0,
+      "page_number": 1,
+      "section_title": null,
+      "title": "Halide-based solid electrolytes for high-voltage all-solid-state batteries",
+      "authors": "Li, X., Liang, J., Sun, X. et al.",
+      "publication_year": 2020,
+      "doi_or_url": "https://doi.org/10.1039/D0EE01017K",
+      "source_type": "PEER_REVIEWED_PAPER",
+      "chemical_systems": [
+        "Cl-In-Li",
+        "Cl-Li-Y",
+        "Co-Li-Mn-Ni-O"
+      ],
+      "formulas_mentioned": [
+        "Li3InCl6",
+        "Li3YCl6",
+        "LiNi0.8Co0.1Mn0.1O2"
+      ],
+      "property_tags": [
+        "ionic_conductivity",
+        "band_gap"
+      ],
+      "metadata": {}
+    },
+    {
+      "chunk_id": "chk-644d55505b81",
+      "document_id": "doc-3a33cdfe04",
+      "content": "The thermodynamic stability of candidate inorganic crystals is evaluated by calculating energy above the convex hull (E_hull). A candidate with E_hull = 0 is strictly stable in the zero-temperature phase diagram. A threshold of E_hull <= 0.05 eV/atom (50 meV/atom) is universally adopted as the computational standard for synthesizable or metastable materials, as entropic contributions at synthesis temperatures often stabilize phases within this energy window. However, computational E_hull does not account for kinetic trapping, atmospheric oxidation, or dynamic phonon stability. Materials scientists must conduct phonon dispersion calculations to verify the absence of imaginary frequencies before declaring dynamic structural viability.",
+      "chunk_index": 0,
+      "page_number": 1,
+      "section_title": null,
+      "title": "Computational Screening and Thermodynamic Convex Hull Stability Criteria",
+      "authors": "Sun, W., Dacek, S. T., Ong, S. P., Hautier, G., Jain, A., Ceder, G.",
+      "publication_year": 2016,
+      "doi_or_url": "https://doi.org/10.1126/sciadv.1600225",
+      "source_type": "PEER_REVIEWED_PAPER",
+      "chemical_systems": [],
+      "formulas_mentioned": [],
+      "property_tags": [
+        "thermodynamic_stability",
+        "band_gap"
+      ],
+      "metadata": {}
+    }
+  ]
+}
