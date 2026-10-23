@@ -24,6 +24,11 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20.11.0
+      - key: BACKEND_URL
+        fromService:
+          type: web
+          name: crystal-x-backend
+          property: url
       - key: NEXT_PUBLIC_API_URL
         fromService:
           type: web
